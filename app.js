@@ -15,6 +15,8 @@ const seatReservations = require('./routes/seatreserved');
 const seatlayouts = require("./routes/seatlayouts");
 const http = require('http');
 const { Server } = require('socket.io');
+require('dotenv').config();
+
 
 
 const app = express();
