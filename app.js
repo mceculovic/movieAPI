@@ -63,7 +63,7 @@ app.use("/api", seatlayouts);
 
 
 
-const port = 8000;
+const port = process.env.PORT || 8000;
 
 server.listen(port, async () =>{
     console.log("Listening on port " + port + "...");
