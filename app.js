@@ -28,7 +28,7 @@ const cors = require('cors');
 const server = http.createServer(app);
 const io = new Server(server, {
     cors: {
-        origin: 'http://localhost:8080',
+        origin: '*',
         methods: ['GET', 'POST'],
         credentials: true
     },
@@ -38,7 +38,7 @@ const io = new Server(server, {
 app.io = io;
 
 const corsOptions = {
-    origin: 'http://localhost:8080',
+    origin: '*',
     optionsSuccessStatus: 200,
     credentials: true
 }
