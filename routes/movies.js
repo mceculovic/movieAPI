@@ -27,7 +27,7 @@ route.get('/movies', async (req, res) => {
     try{
         console.log("usao");
         movies = await Movie.findAll({
-            include: [Actor,Director, 'genre']
+            include: [Actor,Director, Genre]
         });
         res.json(movies);
     }catch(error){
