@@ -28,7 +28,7 @@ const cors = require('cors');
 const server = http.createServer(app);
 const io = new Server(server, {
     cors: {
-        origin: 'https://movieatory.herokuapp.com',
+        origin: 'http://localhost:10000',
         methods: ['GET', 'POST'],
         credentials: true
     },

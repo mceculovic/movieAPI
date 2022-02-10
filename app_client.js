@@ -4,6 +4,8 @@ const authToken = require('./middlewares/clientAuth.js');
 const adminAuth = require('./middlewares/adminAuth.js');
 const moderatorAuth = require("./middlewares/moderatorAuth.js");
 const cors = require('cors');
+const history = require('connect-history-api-fallback');
+require('dotenv').config();
 
 
 
@@ -64,8 +66,15 @@ app.get('/admin/login', (req, res) => {
 
 app.use(express.static(path.join(__dirname, 'static')));
 
+const staticMdl = express.static(path.join(__dirname, 'dist'));
 
-const port = 10000;
+app.use(staticMdl);
+
+app.use(history({ index: '/index.html' }));
+
+app.use(staticMdl);
+
+const port = process.env.PORT || 10000;
 
 app.listen(port, async () =>{
     console.log("Listening on port " + port + "...");
