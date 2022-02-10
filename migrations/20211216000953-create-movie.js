@@ -23,6 +23,15 @@ module.exports = {
       movieLength: {
         type: Sequelize.INTEGER
       },
+      GenreId: {
+        type: Sequelize.INTEGER,
+        references: {
+          model: 'Genres',
+          key: 'id'
+        },
+        onDelete: 'cascade',
+      onUpdate: 'cascade',
+      },
       imageFileName:{
         type: Sequelize.STRING
       },
