@@ -14,7 +14,7 @@ module.exports = (sequelize, DataTypes) => {
       this.belongsToMany(Actor, { through: 'Cast'});
       this.belongsToMany(Director, {through: 'Directs'});
       this.belongsToMany(Theatre, {as: 'showtimes', through: Showtimes, foreignKey: 'id'});
-      this.belongsTo(Genre, {as: 'genre'});
+      this.belongsTo(Genre, {foreignKey:"genreId", targetKey:"id"});
     }
   };
   Movie.init({
