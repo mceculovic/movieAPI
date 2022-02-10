@@ -23,7 +23,7 @@ module.exports = {
       movieLength: {
         type: Sequelize.INTEGER
       },
-      GenreId: {
+      genreId: {
         type: Sequelize.INTEGER,
         references: {
           model: 'Genres',
