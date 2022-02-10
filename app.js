@@ -40,8 +40,7 @@ app.io = io;
 const corsOptions = {
     origin: '*',
     optionsSuccessStatus: 200,
-    credentials: true
-}
+};
 app.use(cors(corsOptions));
 
 
