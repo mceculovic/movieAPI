@@ -25,6 +25,7 @@ route.use(express.urlencoded({extended: true}));
 route.get('/movies', async (req, res) => {
     let movies = null;
     try{
+        console.log("usao");
         movies = await Movie.findAll({
             include: [Actor,Director, 'genre']
         });
