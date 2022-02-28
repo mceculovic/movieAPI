@@ -28,7 +28,7 @@ const cors = require('cors');
 const server = http.createServer(app);
 const io = new Server(server, {
     cors: {
-        origin: 'https://movieatery.herokuapp.com',
+        origin: 'https://movieatery-api.herokuapp.com',
         methods: ['GET', 'POST'],
         credentials: true
     },
